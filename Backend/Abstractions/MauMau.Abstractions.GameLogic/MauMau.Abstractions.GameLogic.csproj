@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\MauMau.Application.Dto\MauMau.Application.Dto.csproj" />
     <ProjectReference Include="..\..\Domain\MauMau.Common\MauMau.Common.csproj" />
   </ItemGroup>
     
