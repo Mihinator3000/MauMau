@@ -11,9 +11,12 @@ public record CardMove(Guid HandId, ICard Card) : Move(HandId)
 {
     public override bool CanBePlayed(IReadOnlyList<IMove> moves)
     {
-        for (int i = 0; i < moves.Count; i++)
+        if (IsLastCardQueen(moves))
+            return false;
+
+        for (int i = moves.Count - 1; i >= 0; i--)
         {
-            switch (moves[^i])
+            switch (moves[i])
             {
                 case CardMove cardMove:
                     return Card.CanBePlayed(cardMove.Card);

@@ -7,8 +7,10 @@ public record DrawMove(Guid HandId) : Move(HandId)
 {
     public override bool CanBePlayed(IReadOnlyList<IMove> moves)
     {
-        IMove lastMove = moves[^1];
-        if (lastMove.HandId != HandId)
+        if (IsLastCardQueen(moves))
+            return false;
+        
+        if (moves[^1].HandId != HandId)
             return true;
 
         return EightInThreeMovesWithOnlyDraws(moves);
