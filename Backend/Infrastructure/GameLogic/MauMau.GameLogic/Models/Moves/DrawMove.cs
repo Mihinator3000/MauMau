@@ -18,7 +18,11 @@ public record DrawMove(Guid HandId) : Move(HandId)
 
     public override void Play(IGame game)
     {
-        IMove lastMove = game.Moves[^2];
+        IList<IMove> movesBeforeCurrent = game.Moves
+            .SkipLast(1)
+            .ToList();
+
+        IMove lastMove = movesBeforeCurrent[^1];
 
         if (lastMove is not CardMove { Card: DrawCard })
         {
@@ -28,9 +32,9 @@ public record DrawMove(Guid HandId) : Move(HandId)
 
         int drawAmount = 0;
 
-        for (int i = 1; i < game.Moves.Count; i++)
+        for (int i = movesBeforeCurrent.Count - 1; i >= 0; i--)
         {
-            IMove move = game.Moves[^i];
+            IMove move = movesBeforeCurrent[i];
 
             if (move is not CardMove { Card: DrawCard drawCard })
                 break;

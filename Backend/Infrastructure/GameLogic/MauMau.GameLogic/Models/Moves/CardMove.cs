@@ -14,15 +14,24 @@ public record CardMove(Guid HandId, ICard Card) : Move(HandId)
         if (IsLastCardQueen(moves))
             return false;
 
-        for (int i = moves.Count - 1; i >= 0; i--)
+        for (int i = 1; i <= moves.Count; i++)
         {
-            switch (moves[i])
+            switch (moves[^i])
             {
                 case CardMove cardMove:
-                    return Card.CanBePlayed(cardMove.Card);
+                {
+                    var card = cardMove.Card;
+                    if (i is 1)
+                        return Card.CanBePlayed(card);
+
+                    var helperNonDrawCard = new HelperCard(card.Suit, card.Rank);
+                    return Card.CanBePlayed(helperNonDrawCard);
+                }
                 case PickSuitMove pickSuitMove:
-                    var helperCard = new HelperCard(pickSuitMove.Suit);
-                    return Card.CanBePlayed(helperCard);
+                {
+                    var helperSuitCard = new HelperCard(pickSuitMove.Suit);
+                    return Card.CanBePlayed(helperSuitCard);
+                }
             }
         }
 
