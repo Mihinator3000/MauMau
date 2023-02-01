@@ -7,10 +7,12 @@ public record SkipMove(Guid HandId) : Move(HandId)
 {
     public override bool CanBePlayed(IReadOnlyList<IMove> moves)
     {
-        return moves[^1] switch
+        IMove lastMove = moves[^1];
+
+        return lastMove switch
         {
-            CardMove {Card: AceCard} => true,
-            DrawMove => !EightInThreeMovesWithOnlyDraws(moves),
+            CardMove { Card: AceCard } => true,
+            DrawMove => lastMove.HandId == HandId && !EightInThreeMovesWithOnlyDraws(moves),
             _ => false
         };
     }

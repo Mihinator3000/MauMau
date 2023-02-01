@@ -1,6 +1,7 @@
 ﻿using MauMau.Abstractions.GameLogic.Cards;
 using MauMau.Abstractions.GameLogic.Models;
 using MauMau.Common.Enums.Cards;
+using MauMau.Common.Exceptions;
 using MauMau.GameLogic.Extensions;
 using MauMau.GameLogic.Models.Moves;
 
@@ -29,7 +30,12 @@ public class Hand : IHand
 
     public void PlayCardToPile(ICard card, IPile pile)
     {
-        _cards.Remove(card);
+        if (!_cards.Remove(card))
+            throw new GameLogicException($"Couldn't remove card from hand {Id}");
+
+        if (_cards.Count is 0)
+            throw new EndGameException();
+
         pile.AddCard(card);
     }
 
@@ -37,8 +43,8 @@ public class Hand : IHand
     {
         return _cards
             .Select(c => new CardMove(Id, c))
-            .Where(c => c.CanBePlayed(previousMoves))
-            .AppendIf<IMove>(new DrawMove(Id), m => m.CanBePlayed(previousMoves))
+            .Where<IMove>(c => c.CanBePlayed(previousMoves))
+            .AppendIf(new DrawMove(Id), m => m.CanBePlayed(previousMoves))
             .AppendIf(new SkipMove(Id), m => m.CanBePlayed(previousMoves))
             .AppendIf(new PickSuitMove(Id, Suit.Undefined), m => m.CanBePlayed(previousMoves))
             .ToList();

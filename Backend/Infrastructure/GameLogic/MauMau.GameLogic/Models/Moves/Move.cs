@@ -9,14 +9,15 @@ public abstract record Move(Guid HandId) : IMove
 
     public abstract void Play(IGame game);
 
-    protected static bool EightInThreeMovesWithOnlyDraws(IReadOnlyList<IMove> moves)
+    protected bool EightInThreeMovesWithOnlyDraws(IReadOnlyList<IMove> moves)
     {
-        for (int i = 0; i < moves.Count; i++)
+        for (int i = 0; i < moves.Count && i < 3; i++)
         {
-            if (i > 3)
-                break;
+            var move = moves[^(i + 1)];
+            if (move.HandId != HandId)
+                return false;
 
-            switch (moves[^i])
+            switch (move)
             {
                 case DrawMove:
                     continue;
@@ -29,4 +30,7 @@ public abstract record Move(Guid HandId) : IMove
 
         return false;
     }
+
+    protected static bool IsLastCardQueen(IReadOnlyList<IMove> moves)
+        => moves[^1] is CardMove { Card: QueenCard };
 }
