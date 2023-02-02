@@ -1,4 +1,5 @@
-﻿using MauMau.Core.ValueObjects;
+﻿using MauMau.Core.GameComponents.Moves;
+using MauMau.Core.ValueObjects;
 using RichEntity.Annotations;
 
 namespace MauMau.Core.GameComponents;
@@ -6,19 +7,22 @@ namespace MauMau.Core.GameComponents;
 public partial class Game : IEntity<Guid>
 {
     public Game(
+        Guid id,
         long winMoney,
-        IReadOnlyCollection<Hand> hands,
         Cards deck,
         Cards pile,
+        IReadOnlyCollection<Hand> hands,
+        IReadOnlyCollection<Move> moves,
         int currentHandNumber,
         bool isRotationClockWise,
         int movesLeftCount)
-        : this(Guid.NewGuid())
+        : this(id)
     {
         WinMoney = winMoney;
-        Hands = hands;
         Deck = deck;
         Pile = pile;
+        Hands = hands;
+        Moves = moves;
         CurrentHandNumber = currentHandNumber;
         IsRotationClockWise = isRotationClockWise;
         MovesLeftCount = movesLeftCount;
@@ -26,11 +30,13 @@ public partial class Game : IEntity<Guid>
 
     public long WinMoney { get; protected init; }
 
-    public IReadOnlyCollection<Hand> Hands { get; protected init; }
-
     public Cards Deck { get; set; }
 
     public Cards Pile { get; set; }
+
+    public IReadOnlyCollection<Hand> Hands { get; protected init; }
+
+    public IReadOnlyCollection<Move> Moves { get; protected init; }
 
     public int CurrentHandNumber { get; set; }
 
