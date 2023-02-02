@@ -11,9 +11,9 @@ public static class RegistrationExtensions
 
     public static IServiceCollection AddDatabaseContext(
         this IServiceCollection services,
-        Action<DbContextOptionsBuilder> action)
+        Action<DbContextOptionsBuilder> optionsAction)
     {
-        services.AddDbContext<IMauMauDbContext, MauMauDbContext>(action);
+        services.AddDbContext<IMauMauDbContext, MauMauDbContext>(optionsAction);
         return services;
     }
 
