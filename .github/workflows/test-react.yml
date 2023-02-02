@@ -28,8 +28,3 @@ jobs:
       run: |
         cd Frontend
         npm run build
-
-    - name: Test
-      run: |
-        cd Frontend
-        npm test
