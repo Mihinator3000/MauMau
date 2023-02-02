@@ -11,9 +11,9 @@ public abstract record Move(Guid HandId) : IMove
 
     protected bool EightInThreeMovesWithOnlyDraws(IReadOnlyList<IMove> moves)
     {
-        for (int i = 0; i < moves.Count && i < 3; i++)
+        for (int i = 1; i <= moves.Count && i <= 3; i++)
         {
-            var move = moves[^(i + 1)];
+            var move = moves[^i];
             if (move.HandId != HandId)
                 return false;
 
