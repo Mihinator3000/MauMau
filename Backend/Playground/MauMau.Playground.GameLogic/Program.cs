@@ -5,7 +5,7 @@ using MauMau.Application.Dto.Game.Creation;
 using MauMau.Common.Enums.Cards;
 using MauMau.GameLogic.Extensions;
 using MauMau.GameLogic.Models.Moves;
-using MauMau.Playground.GameLogic;
+using MauMau.Playground.GameLogic.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
 IServiceProvider services = new ServiceCollection()

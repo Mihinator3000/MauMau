@@ -1,6 +1,6 @@
 ﻿using MauMau.Abstractions.GameLogic.Cards;
 
-namespace MauMau.Playground.GameLogic;
+namespace MauMau.Playground.GameLogic.Extensions;
 
 public static class CardExtensions
 {
