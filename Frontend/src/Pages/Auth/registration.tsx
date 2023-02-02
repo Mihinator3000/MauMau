@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import {useNavigate} from "react-router-dom";
+//import {useNavigate} from "react-router-dom";
 
 interface State {
     username: string;
@@ -14,7 +13,7 @@ const Registration = () => {
     const [state, setState] = useState<State>({ username: '', email: '', password: '', confirmationPassword: '', showPassword: false});
 
 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     const onLogin = async (username: string, password: string) => {
 
