@@ -1,5 +1,6 @@
 ﻿using MauMau.Abstractions.DataAccess;
 using MauMau.Core.GameComponents;
+using MauMau.Core.GameComponents.Moves;
 using MauMau.Core.GameComponents.Options;
 using MauMau.Core.Identity;
 using MauMau.Core.Players;
@@ -28,6 +29,11 @@ public class MauMauDbContext : DbContext, IMauMauDbContext
     public required DbSet<Game> Games { get; init; }
     public required DbSet<Hand> Hands { get; init; }
 
+    public required DbSet<CardMove> CardMoves { get; init; }
+    public required DbSet<DrawMove> DrawMoves { get; init; }
+    public required DbSet<SkipMove> SkipMoves { get; init; }
+    public required DbSet<PickSuitMove> PickSuitMoves { get; init; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(IAssemblyMarker).Assembly);
@@ -35,6 +41,7 @@ public class MauMauDbContext : DbContext, IMauMauDbContext
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {
+        configurationBuilder.Properties<Card>().HaveConversion<CardConverter>();
         configurationBuilder.Properties<Cards>().HaveConversion<CardsConverter>();
         configurationBuilder.Properties<TimeSpan>().HaveConversion<TimeSpanConverter>();
     }

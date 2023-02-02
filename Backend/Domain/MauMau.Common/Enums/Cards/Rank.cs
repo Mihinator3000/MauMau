@@ -3,7 +3,6 @@
 public enum Rank
 {
     Undefined = 0,
-    Ace = 1,
     Two = 2,
     Three = 3,
     Four = 4,
@@ -15,5 +14,6 @@ public enum Rank
     Ten = 10,
     Jack = 11,
     Queen = 12,
-    King = 13
+    King = 13,
+    Ace = 14
 }

@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 
 namespace MauMau.DataAccess.ValueConverters;
 
-public class CardsConverter : ValueConverter<Cards, string>
+public class CardConverter : ValueConverter<Card, string>
 {
-    public CardsConverter()
+    public CardConverter()
         : base(x => JsonConvert.SerializeObject(x),
-            x => JsonConvert.DeserializeObject<Cards>(x)) { }
+            x => JsonConvert.DeserializeObject<Card>(x)) { }
 }

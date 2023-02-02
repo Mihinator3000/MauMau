@@ -1,4 +1,5 @@
 ﻿using MauMau.Core.GameComponents;
+using MauMau.Core.GameComponents.Moves;
 using MauMau.Core.GameComponents.Options;
 using MauMau.Core.Identity;
 using MauMau.Core.Players;
@@ -22,6 +23,11 @@ public interface IMauMauDbContext
 
     DbSet<Game> Games { get; }
     DbSet<Hand> Hands { get; }
+
+    DbSet<CardMove> CardMoves { get; }
+    DbSet<DrawMove> DrawMoves { get; }
+    DbSet<SkipMove> SkipMoves { get; }
+    DbSet<PickSuitMove> PickSuitMoves { get; }
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }
