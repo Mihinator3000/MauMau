@@ -1,4 +1,4 @@
-name: React TypeScript Tests
+name: React Tests
 
 on:
   push:
