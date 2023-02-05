@@ -1,7 +1,7 @@
 ﻿using MauMau.Common.Enums.Cards;
 using MauMau.GameLogic.Cards.Abstractions;
 
-namespace MauMau.GameLogic.Cards.NonDraw;
+namespace MauMau.GameLogic.Models.Cards.NonDraw;
 
 public class KingCard : NonDrawCard
 {

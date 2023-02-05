@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MauMau.Abstractions.GameLogic.Cards;
 using MauMau.Abstractions.GameLogic.Models;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Application.Dto.Game;
 using MauMau.Common.Enums.Cards;
 using MauMau.Common.Exceptions;

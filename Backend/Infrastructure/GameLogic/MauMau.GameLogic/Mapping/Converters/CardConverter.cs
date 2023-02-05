@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MauMau.Abstractions.GameLogic.Cards;
 using MauMau.Abstractions.GameLogic.Factories;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Application.Dto.Game;
 
 namespace MauMau.GameLogic.Mapping.Converters;

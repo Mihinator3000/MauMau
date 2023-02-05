@@ -1,9 +1,9 @@
 ﻿using MauMau.Abstractions.GameLogic.Models;
 using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Exceptions;
-using MauMau.GameLogic.Cards.Abstractions;
-using MauMau.GameLogic.Cards.Actions;
-using MauMau.GameLogic.Cards.NonDraw.Helpers;
+using MauMau.GameLogic.Models.Cards.Abstractions;
+using MauMau.GameLogic.Models.Cards.Actions;
+using MauMau.GameLogic.Models.Cards.NonDraw.Helpers;
 
 namespace MauMau.GameLogic.Models.Moves;
 

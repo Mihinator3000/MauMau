@@ -1,5 +1,5 @@
-﻿using MauMau.Abstractions.GameLogic.Cards;
-using MauMau.Abstractions.GameLogic.Factories;
+﻿using MauMau.Abstractions.GameLogic.Factories;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
 using MauMau.GameLogic.Cards.Draw;
 using MauMau.GameLogic.Cards.NonDraw;

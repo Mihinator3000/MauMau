@@ -1,5 +1,5 @@
-﻿using MauMau.Abstractions.GameLogic.Cards;
-using MauMau.Abstractions.GameLogic.Models;
+﻿using MauMau.Abstractions.GameLogic.Models;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Exceptions;
 using MauMau.GameLogic.Extensions;
 

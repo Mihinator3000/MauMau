@@ -1,5 +1,5 @@
 ﻿using MauMau.Abstractions.GameLogic.Models;
-using MauMau.GameLogic.Cards.NonDraw;
+using MauMau.GameLogic.Models.Cards.NonDraw;
 
 namespace MauMau.GameLogic.Models.Moves;
 

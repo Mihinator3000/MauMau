@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MauMau.Abstractions.GameLogic.Cards;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Application.Dto.Game;
 using MauMau.GameLogic.Mapping.Converters;
 

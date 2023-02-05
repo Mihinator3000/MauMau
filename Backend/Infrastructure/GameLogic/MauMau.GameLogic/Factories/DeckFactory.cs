@@ -1,6 +1,6 @@
-﻿using MauMau.Abstractions.GameLogic.Cards;
-using MauMau.Abstractions.GameLogic.Factories;
+﻿using MauMau.Abstractions.GameLogic.Factories;
 using MauMau.Abstractions.GameLogic.Models;
+using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Abstractions.GameLogic.Providers;
 using MauMau.Common.Enums.Cards;
 using MauMau.GameLogic.Models;

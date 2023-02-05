@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\..\Abstractions\MauMau.Abstractions.GameLogic\MauMau.Abstractions.GameLogic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+
 </Project>

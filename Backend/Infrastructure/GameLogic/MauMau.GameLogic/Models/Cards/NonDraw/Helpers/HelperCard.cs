@@ -1,7 +1,7 @@
 ﻿using MauMau.Common.Enums.Cards;
 using MauMau.GameLogic.Cards.Abstractions;
 
-namespace MauMau.GameLogic.Cards.NonDraw.Helpers;
+namespace MauMau.GameLogic.Models.Cards.NonDraw.Helpers;
 
 public class HelperCard : NonDrawCard
 {
