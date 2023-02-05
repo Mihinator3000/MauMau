@@ -2,7 +2,7 @@
 using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
 using MauMau.Common.Exceptions;
-using MauMau.GameLogic.Cards.NonDraw;
+using MauMau.GameLogic.Models.Cards.NonDraw;
 using MauMau.GameLogic.Extensions;
 using MauMau.GameLogic.Models.Moves;
 

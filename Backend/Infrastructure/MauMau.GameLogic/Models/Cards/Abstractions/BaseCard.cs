@@ -1,7 +1,7 @@
 ﻿using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
 
-namespace MauMau.GameLogic.Cards.Abstractions;
+namespace MauMau.GameLogic.Models.Cards.Abstractions;
 
 public abstract class BaseCard : ICard
 {

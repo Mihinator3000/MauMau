@@ -1,9 +1,9 @@
 ﻿using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
-using MauMau.GameLogic.Cards.Abstractions;
+using MauMau.GameLogic.Models.Cards.Abstractions;
 using MauMau.GameLogic.Models.Cards.Actions;
 
-namespace MauMau.GameLogic.Cards.Draw;
+namespace MauMau.GameLogic.Models.Cards.Draw;
 
 public class KingOfSpadesCard : DrawCard, IActionCard
 {

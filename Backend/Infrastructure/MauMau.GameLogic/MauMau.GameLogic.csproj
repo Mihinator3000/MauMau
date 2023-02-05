@@ -11,9 +11,8 @@
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Abstractions\MauMau.Abstractions.GameLogic\MauMau.Abstractions.GameLogic.csproj" />
-    <ProjectReference Include="..\..\..\Application\MauMau.Application.Dto\MauMau.Application.Dto.csproj" />
-    <ProjectReference Include="..\MauMau.GameLogic.Cards\MauMau.GameLogic.Cards.csproj" />
+    <ProjectReference Include="..\..\Abstractions\MauMau.Abstractions.GameLogic\MauMau.Abstractions.GameLogic.csproj" />
+    <ProjectReference Include="..\..\Application\MauMau.Application.Dto\MauMau.Application.Dto.csproj" />
   </ItemGroup>
 
 </Project>

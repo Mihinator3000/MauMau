@@ -1,21 +1,21 @@
 ﻿using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
-using MauMau.GameLogic.Cards.Abstractions;
+using MauMau.GameLogic.Models.Cards.Abstractions;
 
 namespace MauMau.GameLogic.Models.Cards.Draw;
 
-public class SevenCard : DrawCard
+public class SixCard : DrawCard
 {
-    public SevenCard(Suit suit) : base(Rank.Seven, suit) { }
+    public SixCard(Suit suit) : base(Rank.Six, suit) { }
 
-    public override int DrawAmount => 2;
+    public override int DrawAmount => 1;
 
     public override bool CanBePlayed(ICard previousCard)
     {
         return previousCard switch
         {
-            SevenCard => true,
-            SixCard or KingOfSpadesCard => false,
+            SixCard => true,
+            SevenCard or KingOfSpadesCard => false,
             _ => HasSameRankOrSuit(previousCard)
         };
     }

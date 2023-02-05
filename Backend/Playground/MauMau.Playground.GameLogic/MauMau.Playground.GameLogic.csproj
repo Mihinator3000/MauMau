@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\GameLogic\MauMau.GameLogic\MauMau.GameLogic.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\MauMau.GameLogic\MauMau.GameLogic.csproj" />
   </ItemGroup>
 
 </Project>

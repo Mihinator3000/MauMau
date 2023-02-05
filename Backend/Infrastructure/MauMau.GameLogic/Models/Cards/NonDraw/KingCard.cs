@@ -1,5 +1,5 @@
 ﻿using MauMau.Common.Enums.Cards;
-using MauMau.GameLogic.Cards.Abstractions;
+using MauMau.GameLogic.Models.Cards.Abstractions;
 
 namespace MauMau.GameLogic.Models.Cards.NonDraw;
 

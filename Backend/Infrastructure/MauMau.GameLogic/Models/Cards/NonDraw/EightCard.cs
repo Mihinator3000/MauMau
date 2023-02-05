@@ -1,14 +1,14 @@
 ﻿using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
-using MauMau.GameLogic.Cards.Abstractions;
+using MauMau.GameLogic.Models.Cards.Abstractions;
 using MauMau.GameLogic.Models.Cards.Actions;
 
 namespace MauMau.GameLogic.Models.Cards.NonDraw;
 
-public class TenCard : NonDrawCard, IActionCard
+public class EightCard : NonDrawCard, IActionCard
 {
-    public TenCard(Suit suit) : base(Rank.Ten, suit) { }
+    public EightCard(Suit suit) : base(Rank.Eight, suit) { }
 
     public ICardAction GetCardAction()
-        => ChangeRotationAction.Value;
+        => NotChangeHandAction.Value;
 }
