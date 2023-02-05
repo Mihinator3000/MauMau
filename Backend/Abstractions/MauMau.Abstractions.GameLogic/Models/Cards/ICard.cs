@@ -1,6 +1,6 @@
 ﻿using MauMau.Common.Enums.Cards;
 
-namespace MauMau.Abstractions.GameLogic.Cards;
+namespace MauMau.Abstractions.GameLogic.Models.Cards;
 
 public interface ICard
 {
