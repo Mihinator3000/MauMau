@@ -2,6 +2,7 @@
 using MauMau.Abstractions.GameLogic.Models;
 using MauMau.Common.Enums.Cards;
 using MauMau.Common.Exceptions;
+using MauMau.GameLogic.Cards.NonDraw;
 using MauMau.GameLogic.Extensions;
 using MauMau.GameLogic.Models.Moves;
 
@@ -33,7 +34,7 @@ public class Hand : IHand
         if (!_cards.Remove(card))
             throw new GameLogicException($"Couldn't remove card from hand {Id}");
 
-        if (_cards.Count is 0)
+        if (_cards.Count is 0 && card is not EightCard)
             throw new EndGameException();
 
         pile.AddCard(card);

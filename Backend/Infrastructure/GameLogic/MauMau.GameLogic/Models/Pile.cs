@@ -1,6 +1,7 @@
 ﻿using MauMau.Abstractions.GameLogic.Cards;
 using MauMau.Abstractions.GameLogic.Models;
 using MauMau.Common.Exceptions;
+using MauMau.GameLogic.Extensions;
 
 namespace MauMau.GameLogic.Models;
 
@@ -29,10 +30,10 @@ public class Pile : IPile
 
     public void MoveCardsToDeck(IDeck deck)
     {
-        if (_cards.Count is 0)
+        if (_cards.Count is 1)
             throw new EndGameException();
 
-        deck.AddCards(_cards);
-        _cards.Clear();
+        List<ICard> cardsToMove = _cards.RemoveAndGetRange(0, _cards.Count - 1);
+        deck.AddCards(cardsToMove);
     }
 }
