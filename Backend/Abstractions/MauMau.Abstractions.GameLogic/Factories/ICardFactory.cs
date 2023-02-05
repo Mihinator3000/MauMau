@@ -1,4 +1,4 @@
-﻿using MauMau.Abstractions.GameLogic.Cards;
+﻿using MauMau.Abstractions.GameLogic.Models.Cards;
 using MauMau.Common.Enums.Cards;
 
 namespace MauMau.Abstractions.GameLogic.Factories;
