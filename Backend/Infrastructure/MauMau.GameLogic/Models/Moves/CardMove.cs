@@ -42,30 +42,13 @@ public record CardMove(Guid HandId, ICard Card) : Move(HandId)
     {
         game.CurrentHand.PlayCardToPile(Card, game.Pile);
 
-        if (Card is not IActionCard actionCard)
+        if (Card is IActionCard actionCard)
         {
-            game.SetNextHandCurrent();
+            var cardAction = actionCard.GetCardAction();
+            cardAction.Apply(game);
             return;
         }
 
-        switch (actionCard.GetCardAction())
-        {
-            case NotChangeHandAction:
-                return;
-            case SkipAction:
-                game.SetNextHandCurrent();
-                game.PlayMove(new SkipMove(game.CurrentHand.Id));
-                return;
-            case ChangeRotationAction:
-                game.ChangeRotation();
-                game.SetNextHandCurrent();
-                return;
-            case DrawWithoutResponseAction:
-                game.SetNextHandCurrent();
-                game.PlayMove(new DrawMove(game.CurrentHand.Id));
-                return;
-            default:
-                throw new GameLogicException("Action is not supported");
-        }
+        game.SetNextHandCurrent();
     }
 }

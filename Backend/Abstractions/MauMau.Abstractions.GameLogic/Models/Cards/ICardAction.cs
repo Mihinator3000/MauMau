@@ -2,4 +2,5 @@
 
 public interface ICardAction
 {
+    void Apply(IGame game);
 }
